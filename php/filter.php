@@ -1,0 +1,94 @@
+<?php
+//防止sql注入和xss
+
+function filter($str)
+{
+    if (empty($str)) return false;
+    $str = htmlspecialchars($str);
+    $str = str_ireplace( '/', "", $str);
+    $str = str_ireplace( 'CR', "", $str);
+    $str = str_ireplace( 'ASCII', "", $str);
+    $str = str_ireplace( 'ASCII 0x0d', "", $str);
+    $str = str_ireplace( 'LF', "", $str);
+    $str = str_ireplace( 'ASCII 0x0a', "", $str);
+    $str = str_ireplace( 'eval', "", $str);
+    $str = str_ireplace( 'open', "", $str);
+    $str = str_ireplace( 'sysopen', "", $str);
+    $str = str_ireplace( 'system', "", $str);
+    $str = str_ireplace( '$', "", $str);
+    $str = str_ireplace( 'ASCII 0x08', "", $str);
+    $str = str_ireplace("", "", $str);
+    $str = str_ireplace("&gt", "", $str);
+    $str = str_ireplace("&lt", "", $str);
+    $str = str_ireplace("<SCRIPT>", "", $str);
+    $str = str_ireplace("</SCRIPT>", "", $str);
+    $str = str_ireplace("<script>", "", $str);
+    $str = str_ireplace("</script>", "", $str);
+    $str = str_ireplace("select","",$str);
+    $str = str_ireplace("join","",$str);
+    $str = str_ireplace("union","",$str);
+    $str = str_ireplace("where","",$str);
+    $str = str_ireplace("insert","",$str);
+    $str = str_ireplace("delete","",$str);
+    $str = str_ireplace("update","",$str);
+    $str = str_ireplace("like","",$str);
+    $str = str_ireplace("drop","",$str);
+    $str = str_ireplace("DROP","",$str);
+    $str = str_ireplace("create","",$str);
+    $str = str_ireplace("modify","",$str);
+    $str = str_ireplace("rename","",$str);
+    $str = str_ireplace("alter","",$str);
+    $str = str_ireplace("cas","",$str);
+    $str = str_ireplace("&","",$str);
+    $str = str_ireplace(" ",chr(32),$str);
+    $str = str_ireplace(" ",chr(9),$str);
+    $str = str_ireplace("    ",chr(9),$str);
+    $str = str_ireplace("&",chr(34),$str);
+    $str = str_ireplace("'",chr(39),$str);
+    $str = str_ireplace("<br />",chr(13),$str);
+    $str = str_ireplace("''","'",$str);
+    $str = str_ireplace("css","'",$str);
+    $str = str_ireplace("CSS","'",$str);
+    $str = str_ireplace("<!--","",$str);
+    $str = str_ireplace("convert","",$str);
+    $str = str_ireplace("md5","",$str);
+    $str = str_ireplace("passwd","",$str);
+    $str = str_ireplace("password","",$str);
+    $str = str_ireplace("../","",$str);
+    $str = str_ireplace("./","",$str);
+    $str = str_ireplace("Array","",$str);
+    $str = str_ireplace("or 1='1'","",$str);
+    $str = str_ireplace(";set|set&set;","",$str);
+    $str = str_ireplace("`set|set&set`","",$str);
+    $str = str_ireplace("--","",$str);
+    $str = str_ireplace("OR","",$str);
+    $str = str_ireplace("*","",$str);
+    $str = str_ireplace("/","",$str);
+    $str = str_ireplace("=","",$str);
+    $str = str_ireplace("'/","",$str);
+    $str = str_ireplace("-- ","",$str);
+    $str = str_ireplace(" -- ","",$str);
+    $str = str_ireplace(" --","",$str);
+    $str = str_ireplace("{","",$str);
+    $str = str_ireplace("}","",$str);
+    $str = str_ireplace("response","",$str);
+    $str = str_ireplace("write","",$str);
+    $str = str_ireplace("|","",$str);
+    $str = str_ireplace("`","",$str);
+    $str = str_ireplace(";","",$str);
+    $str = str_ireplace("etc","",$str);
+    $str = str_ireplace("root","",$str);
+    $str = str_ireplace("//","",$str);
+    $str = str_ireplace("!=","",$str);
+    $str = str_ireplace("$","",$str);
+    $str = str_ireplace("&","",$str);
+    $str = str_ireplace("&&","",$str);
+    $str = str_ireplace("==","",$str);
+    $str = str_ireplace("#","",$str);
+    $str = str_ireplace("mailto:","",$str);
+    $str = str_ireplace("CHAR","",$str);
+    $str = str_ireplace("char","",$str);
+    return $str;
+}
+
+?>

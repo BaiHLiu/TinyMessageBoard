@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Register</title>
+	<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="./js/check_register.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+</head>
+	<body>
+			<div class="container" style="position: relative;padding-top: 20%;">
+				<div class="row clearfix">
+					<div class="col-md-12 column">
+						<div class="jumbotron">
+							<h1>
+								Register
+							</h1>
+							<br />
+							<br />
+
+								<form class="bs-example bs-example-form" role="form" action="php/register.php" method="POST">
+									<div class="input-group">
+										<span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+										<input id="register_name" type="text" class="form-control" placeholder="Username" name="name">
+									</div>
+									<br>
+									<div class="input-group">
+										<span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
+										<input id="register_email" type="text" class="form-control" placeholder="E-mail" name="email">
+									</div>
+									<br>
+									<div class="input-group">
+										<span class="input-group-addon"><span class="glyphicon glyphicon-tag"></span></span>
+										<input id="register_password" type="password" class="form-control" placeholder="Password" name="password">
+									</div>
+									<br>
+									<div class="input-group">
+										<span class="input-group-addon"><span class="glyphicon glyphicon-ok"></span></span>
+										<input id="register_vcode" type="text" class="form-control" placeholder="Verification Code" name="vcode">
+									</div>
+									<br>
+									
+									<input onclick="register();" type="button" class="btn btn-primary" value="Submit";/>
+									<!-- <input type="submit" class="btn btn-primary" value="Submit";/> -->
+								</form>
+
+						</div>
+					</div>
+				</div>
+			</div>
+	</body>
+</html>
