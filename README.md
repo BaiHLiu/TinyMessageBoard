@@ -13,10 +13,10 @@ Just my practice for web learning plans.
 另外可以使用./misc/getYiyan_default.py为数据库增加若干测试数据。
 
 ## Plans
-[x] xss防护
-[ ] 添加csrf_token
-[ ] 添加验证码
-[ ] 设置头像、帖子图片上传以及安全防护
+-[x] xss防护
+-[ ] 添加csrf_token
+-[ ] 添加验证码
+-[ ] 设置头像、帖子图片上传以及安全防护
 
 ## Expecting
 希望我能学一下docker~
